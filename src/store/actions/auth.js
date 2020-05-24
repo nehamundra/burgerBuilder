@@ -59,7 +59,7 @@ export const auth=(email,password,isSignup)=>{
             localStorage.setItem('token',res.data.idToken);
             localStorage.setItem('expirationDate',exprDate);
             localStorage.setItem('userId',res.data.localId)
-            dispatch(authSuccess(res.data.idToken, res.data.userId));
+            dispatch(authSuccess(res.data.idToken, res.data.localId));
             dispatch(checkAuthTimeout(res.data.expiresIn))
         })
         .catch(err=>{
